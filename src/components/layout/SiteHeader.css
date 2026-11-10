@@ -1,0 +1,121 @@
+.site-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-height);
+  padding-left: var(--space-5);
+  background: var(--color-plum);
+  color: var(--color-cream);
+}
+
+.site-header a {
+  color: var(--color-cream);
+  text-decoration: none;
+}
+
+.site-header__brand {
+  display: block;
+  padding-block: var(--space-3);
+}
+
+.site-header__nav {
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  gap: 1.75rem;
+  font-size: var(--text-lg);
+  font-weight: 500;
+}
+
+.site-header__links {
+  display: none;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-header__links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+}
+
+.site-header__menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  width: 4rem;
+  min-height: var(--header-height);
+  border: 0;
+  background: var(--color-red);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.site-header__menu-button:hover,
+.site-header__menu-button[aria-expanded='true'] {
+  background: #a90c16;
+}
+
+.site-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  padding: var(--space-4) var(--gutter) var(--space-8);
+  background: var(--color-plum-deep);
+  box-shadow: 0 12px 24px rgb(0 0 0 / 25%);
+}
+
+.site-menu[hidden] {
+  display: none;
+}
+
+.site-menu__list {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-menu__link {
+  display: block;
+  padding: var(--space-3) 0 var(--space-3) var(--space-3);
+  border-left: 3px solid var(--color-cream);
+  font-weight: 500;
+}
+
+.site-menu__link:hover {
+  border-left-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+@media (min-width: 48em) {
+  .site-header {
+    padding-left: var(--gutter);
+  }
+
+  .site-header__links {
+    display: flex;
+  }
+
+  .site-header__menu-button {
+    width: 6.25rem;
+  }
+
+  /* Di desktop tautan utama sudah tampil di header, jadi panel hanya memuat pelengkapnya. */
+  .site-menu__primary {
+    display: none;
+  }
+
+  .site-menu {
+    left: auto;
+    min-width: 20rem;
+    padding-inline: var(--space-8);
+  }
+}

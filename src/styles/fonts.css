@@ -1,0 +1,16 @@
+/* Font di-host sendiri (variable font, subset latin) dari panduan desain 1729. */
+@font-face {
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../assets/fonts/hanken-grotesk-latin-wght.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url("../assets/fonts/newsreader-latin-wght.woff2") format("woff2");
+}

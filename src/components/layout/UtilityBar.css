@@ -1,0 +1,23 @@
+.utility-bar {
+  display: none;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3) 1.75rem;
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+  font-size: 0.9375rem;
+}
+
+.utility-bar__search {
+  text-decoration: none;
+}
+
+.utility-bar__search:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 48em) {
+  .utility-bar {
+    display: flex;
+  }
+}

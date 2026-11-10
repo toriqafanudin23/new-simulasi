@@ -1,0 +1,40 @@
+.button {
+  display: inline-flex;
+  border: 0;
+  font-family: inherit;
+  cursor: pointer;
+  align-items: center;
+  min-height: var(--touch-target);
+  padding: var(--space-3) var(--space-5);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.button--dark {
+  background: var(--color-charcoal);
+  color: var(--color-white);
+}
+
+.button--dark:hover {
+  background: #000;
+}
+
+.button--red {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+.button--red:hover {
+  background: #a90c16;
+}
+
+.button--cream {
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+}
+
+.button--cream:hover {
+  background: var(--color-gold);
+}

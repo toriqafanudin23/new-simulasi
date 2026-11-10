@@ -1,0 +1,8 @@
+.simulation-thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10.625rem;
+  border-bottom: 4px solid var(--color-red);
+  background: var(--color-cream);
+}

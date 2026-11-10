@@ -1,0 +1,18 @@
+.featured-simulations__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13.75rem), 1fr));
+  gap: 1.75rem var(--space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.featured-simulations__more {
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 64em) {
+  .featured-simulations__more {
+    margin-top: var(--space-10);
+  }
+}

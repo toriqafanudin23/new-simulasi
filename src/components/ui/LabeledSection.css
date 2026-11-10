@@ -1,0 +1,19 @@
+.labeled-section {
+  display: grid;
+  gap: var(--space-5);
+  padding-block: 2.75rem;
+}
+
+.labeled-section__label {
+  font-size: var(--text-base);
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+@media (min-width: 64em) {
+  .labeled-section {
+    grid-template-columns: 15rem minmax(0, 1fr);
+    gap: var(--space-16);
+    padding-block: var(--space-22);
+  }
+}

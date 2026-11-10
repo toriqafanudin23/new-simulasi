@@ -1,0 +1,313 @@
+/* ---------- Dasar (layar kecil): panggung di atas, panel di bawah, sampai tepi layar ---------- */
+.simulation-frame {
+  display: grid;
+  margin-inline: calc(var(--gutter) * -1);
+  border-block: 1px solid var(--color-charcoal);
+  background: var(--color-white);
+}
+
+.simulation-frame__stage {
+  position: relative;
+  height: 18.75rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-charcoal);
+}
+
+.simulation-frame__panel {
+  padding: 1.375rem var(--space-5) 1.75rem;
+  border-top: 4px solid var(--color-red);
+  background: var(--color-cream);
+}
+
+.simulation-frame__panel[hidden] {
+  display: none;
+}
+
+.simulation-frame__heading {
+  margin-bottom: 0.875rem;
+}
+
+.simulation-frame__parameters {
+  margin-bottom: var(--space-4);
+}
+
+.simulation-frame__results-heading,
+.simulation-frame__results-equation {
+  display: none;
+}
+
+.simulation-frame__summary {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.simulation-frame__summary p + p {
+  margin-top: var(--space-1);
+}
+
+.simulation-frame__equation {
+  position: absolute;
+  top: 0.625rem;
+  left: 0.875rem;
+  max-width: calc(100% - 1.75rem);
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  line-height: 1.2;
+  pointer-events: none;
+}
+
+.simulation-frame__zoom {
+  position: absolute;
+  right: var(--space-3);
+  bottom: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.simulation-frame__zoom-button {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  background: var(--color-charcoal);
+  color: var(--color-white);
+  font: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.simulation-frame__zoom-button:hover {
+  background: #000;
+}
+
+.simulation-frame__status {
+  position: absolute;
+  bottom: var(--space-3);
+  left: var(--space-3);
+  padding: var(--space-1) var(--space-3);
+  background: var(--color-charcoal);
+  color: var(--color-white);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.simulation-frame__status:empty {
+  display: none;
+}
+
+.simulation-frame__actions {
+  display: flex;
+  gap: var(--space-6);
+  margin-top: var(--space-5);
+}
+
+.simulation-frame__action {
+  padding: 0 0 var(--space-1);
+  border: 0;
+  border-bottom: 2px solid var(--color-red);
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ---------- Desktop: panel 320 px di kiri, panggung di kanan ---------- */
+@media (min-width: 48em) {
+  .simulation-frame {
+    grid-template-columns: 20rem minmax(0, 1fr);
+    grid-template-areas: 'panel stage';
+    margin-inline: 0;
+    border: 1px solid var(--color-charcoal);
+  }
+
+  .simulation-frame__stage {
+    grid-area: stage;
+    height: auto;
+    min-height: 30rem;
+    border-bottom: 0;
+  }
+
+  .simulation-frame__panel {
+    grid-area: panel;
+    padding: 1.75rem;
+    border-top: 0;
+    border-right: 1px solid var(--color-border-subtle);
+  }
+
+  .simulation-frame__heading {
+    margin-bottom: var(--space-5);
+  }
+
+  .simulation-frame__parameters {
+    margin-bottom: var(--space-8);
+  }
+
+  .simulation-frame__results-heading {
+    display: block;
+    margin-bottom: var(--space-3);
+  }
+
+  .simulation-frame__results-equation {
+    display: block;
+    margin-bottom: var(--space-2);
+    font-family: var(--font-serif);
+    font-size: 1.375rem;
+    line-height: 1.3;
+  }
+
+  .simulation-frame__summary {
+    font-size: 0.9375rem;
+  }
+
+  .simulation-frame__equation {
+    display: none;
+  }
+
+  .simulation-frame__zoom {
+    right: var(--space-4);
+    bottom: var(--space-4);
+  }
+
+  .simulation-frame__zoom-button {
+    width: var(--touch-target);
+    height: var(--touch-target);
+  }
+}
+
+/* ---------- Layar penuh: menutup seluruh layar, panel melayang ---------- */
+html.is-simulation-fullscreen {
+  overflow: hidden;
+}
+
+.simulation-frame--fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: block;
+  margin: 0;
+  border: 0;
+}
+
+.simulation-frame--fullscreen .simulation-frame__stage {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+  border: 0;
+}
+
+.simulation-frame--fullscreen .simulation-frame__bar {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 3.5rem;
+  padding: var(--space-1) var(--space-2) var(--space-1) var(--space-5);
+  background: var(--color-plum);
+  color: var(--color-cream);
+}
+
+.simulation-frame__bar-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.simulation-frame__bar-group:first-child {
+  gap: var(--space-5);
+}
+
+.simulation-frame__bar-title {
+  display: none;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+}
+
+.simulation-frame__bar-button {
+  min-height: 2.75rem;
+  padding: 0 var(--space-4);
+  border: 1px solid rgb(255 241 207 / 40%);
+  background: transparent;
+  color: var(--color-cream);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.simulation-frame__bar-button:hover,
+.simulation-frame__bar-button[aria-pressed='true'] {
+  background: rgb(255 241 207 / 14%);
+}
+
+.simulation-frame--fullscreen .simulation-frame__equation {
+  display: block;
+  top: 5.25rem;
+  left: var(--space-6);
+  font-size: clamp(1.5rem, 4vw, 2.75rem);
+}
+
+.simulation-frame--fullscreen .simulation-frame__panel {
+  position: absolute;
+  bottom: 2.25rem;
+  left: var(--space-6);
+  z-index: 2;
+  width: min(18.75rem, calc(100% - 3rem));
+  max-height: calc(100% - 10rem);
+  overflow-y: auto;
+  padding: 1.375rem var(--space-6);
+  border: 0;
+  border-bottom: 5px solid var(--color-red);
+}
+
+.simulation-frame--fullscreen .simulation-frame__results-heading,
+.simulation-frame--fullscreen .simulation-frame__results-equation,
+.simulation-frame--fullscreen .simulation-frame__actions {
+  display: none;
+}
+
+.simulation-frame--fullscreen .simulation-frame__parameters {
+  margin-bottom: var(--space-4);
+}
+
+.simulation-frame--fullscreen .simulation-frame__zoom {
+  right: 1.75rem;
+  bottom: 2.25rem;
+  z-index: 2;
+}
+
+.simulation-frame--fullscreen .simulation-frame__status {
+  top: 4.25rem;
+  right: var(--space-6);
+  bottom: auto;
+  left: auto;
+}
+
+@media (min-width: 48em) {
+  .simulation-frame--fullscreen {
+    display: block;
+  }
+
+  .simulation-frame--fullscreen .simulation-frame__stage {
+    min-height: 0;
+  }
+
+  .simulation-frame--fullscreen .simulation-frame__equation {
+    display: block;
+  }
+
+  .simulation-frame--fullscreen .simulation-frame__panel {
+    padding: 1.375rem var(--space-6);
+    border-right: 0;
+  }
+
+  .simulation-frame__bar-title {
+    display: inline;
+  }
+}

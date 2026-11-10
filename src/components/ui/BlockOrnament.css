@@ -1,0 +1,14 @@
+.block-ornament {
+  position: absolute;
+  pointer-events: none;
+  max-width: 60%;
+  height: auto;
+}
+
+.block-ornament--plum {
+  fill: var(--color-plum-deep);
+}
+
+.block-ornament--maroon {
+  fill: var(--color-maroon-deep);
+}

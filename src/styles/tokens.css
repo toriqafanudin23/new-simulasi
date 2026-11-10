@@ -1,0 +1,63 @@
+/* Token desain 1729 — "Klasik, akademik, premium."
+ * Sumber kebenaran tunggal untuk warna, tipografi, dan jarak.
+ * Komponen hanya boleh memakai token ini, bukan nilai mentah. */
+:root {
+  /* Warna */
+  --color-plum: #45134f;
+  --color-plum-deep: #2f0b38;
+  --color-maroon: #4a1414;
+  --color-maroon-deep: #33090d;
+  --color-cream: #fff1cf;
+  --color-cream-muted: rgb(255 241 207 / 53%);
+  --color-red: #d40f1c;
+  --color-charcoal: #2b2625;
+  --color-gold: #f5b971;
+  --color-white: #fff;
+
+  --color-text: var(--color-charcoal);
+  --color-text-muted: #4a4446;
+  --color-text-subtle: #5a5558;
+  --color-text-on-dark-muted: #d6d1cd;
+  --color-border-subtle: #d6d1cd;
+
+  /* Tipografi */
+  --font-sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Newsreader", Georgia, serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.25rem;
+
+  /* Jarak (kelipatan 4) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-14: 3.5rem;
+  --space-16: 4rem;
+  --space-22: 5.5rem;
+
+  /* Tata letak */
+  --container-max: 83rem;
+  --gutter: var(--space-5);
+  --header-height: 4rem;
+  --touch-target: 3rem;
+
+  /* Gerak */
+  --duration-fast: 150ms;
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (min-width: 48em) {
+  :root {
+    --gutter: var(--space-14);
+    --header-height: 6rem;
+  }
+}

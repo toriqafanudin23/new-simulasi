@@ -1,0 +1,68 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-plum);
+  color: var(--color-cream);
+}
+
+.hero__ornament {
+  top: -1.25rem;
+  right: -2.5rem;
+}
+
+.hero__inner {
+  position: relative;
+  display: grid;
+  align-items: center;
+  gap: var(--space-8);
+  padding-block: var(--space-10) var(--space-12);
+}
+
+.hero__title {
+  margin-block: var(--space-4) var(--space-5);
+  font-family: var(--font-serif);
+  font-size: clamp(2.625rem, 5.28vw, 4.75rem);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.hero__lead {
+  max-width: 34rem;
+  margin-bottom: var(--space-6);
+  font-size: var(--text-md);
+}
+
+.hero__nowrap {
+  white-space: nowrap;
+}
+
+.hero__graph {
+  width: 100%;
+  max-width: 21.875rem;
+  height: auto;
+}
+
+@media (min-width: 64em) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: var(--space-10);
+    padding-block: 4.5rem var(--space-22);
+  }
+
+  .hero__title {
+    margin-block: var(--space-5) 1.75rem;
+  }
+
+  .hero__lead {
+    margin-bottom: var(--space-8);
+    font-size: var(--text-lg);
+  }
+
+  .hero__nowrap {
+  white-space: nowrap;
+}
+
+.hero__graph {
+    max-width: 32.5rem;
+  }
+}

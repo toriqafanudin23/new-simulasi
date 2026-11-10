@@ -1,0 +1,51 @@
+.fullscreen-callout {
+  padding-bottom: 2.75rem;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 22rem;
+}
+
+.fullscreen-callout__panel {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-8) var(--space-5);
+  background: var(--color-plum);
+  color: var(--color-cream);
+}
+
+.fullscreen-callout__ornament {
+  right: 0;
+  bottom: -2.5rem;
+}
+
+.fullscreen-callout__title,
+.fullscreen-callout__text,
+.fullscreen-callout__panel .text-link {
+  position: relative;
+}
+
+.fullscreen-callout__title {
+  max-width: 35rem;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.2vw, 2.875rem);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.fullscreen-callout__text {
+  max-width: 32.5rem;
+  margin-block: var(--space-5) var(--space-6);
+}
+
+@media (min-width: 64em) {
+  .fullscreen-callout {
+    padding-bottom: var(--space-22);
+  }
+
+  .fullscreen-callout__panel {
+    padding: var(--space-14);
+  }
+
+  .fullscreen-callout__text {
+    margin-bottom: 1.75rem;
+  }
+}

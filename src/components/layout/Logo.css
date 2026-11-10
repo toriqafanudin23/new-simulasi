@@ -1,0 +1,36 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.logo__mark {
+  padding-right: var(--space-3);
+  border-right: 1px solid rgb(255 241 207 / 53%);
+  font-size: 1.625rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.logo__name {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.55;
+}
+
+@media (min-width: 48em) {
+  .logo {
+    gap: 1.125rem;
+  }
+
+  .logo__mark {
+    padding-right: 1.125rem;
+    font-size: 2.25rem;
+  }
+
+  .logo__name {
+    font-size: 0.8125rem;
+  }
+}

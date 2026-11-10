@@ -1,0 +1,21 @@
+.text-link {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.text-link--underline {
+  border-bottom: 2px solid var(--color-red);
+}
+
+.text-link--bar {
+  display: inline-block;
+  padding-left: var(--space-3);
+  border-left: 3px solid var(--color-cream);
+  color: var(--color-cream);
+  font-weight: 500;
+}
+
+.text-link--bar:hover {
+  border-left-color: var(--color-gold);
+  color: var(--color-gold);
+}
